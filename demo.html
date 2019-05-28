@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>常旅客下拉控件</title>
+    <script type="text/javascript" src="jquery.min.js"></script> 
+     <script type="text/javascript" src="showPic.js"></script>
+     <link rel="stylesheet" href="iconfont/iconfont.css">
+     <link rel="stylesheet" href="showPic.css">
+    <style type="text/css">
+        li{
+            box-sizing: content-box;
+            -webkit-box-sizing:content-box;
+        }
+    </style>
+</head>
+
+<body>
+<!--回到顶部-->
+<a id="TOP"></a>
+<div id="childContainer" class="panel panel-default">
+    
+        <!--演示-->
+        <a id="demo"></a>
+        <div class="content">
+            <h1>普通展示模式：点击哪一张展示哪一张</h1>
+            <br><br>
+            <br>
+            <div class="imgs" imgUrl="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3289958443,3413081259&fm=26&gp=0.jpg">
+                图片1
+            </div>
+            <br>
+            <br>
+            <div class="imgs" imgUrl="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1554429571&di=56d7a8515ab06db5153eeadc2b36a8f9&imgtype=jpg&er=1&src=http%3A%2F%2Fimg1.ph.126.net%2Fh589RYWuGAYwLkYKf8IRdw%3D%3D%2F3265954154774685544.jpg">
+                图片2
+            </div>
+            <br>
+            <br>
+            <div class="imgs" imgUrl="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=199216939,3003646253&fm=26&gp=0.jpg">
+                图片3
+            </div>
+            <br>
+            <br><br>
+            <br><br>
+            <br>
+            <h1>复合展示模式： 获取当前点击dom的相同dom上的所有自定义属性上的img地址</h1>
+            <br><br>
+            <br>
+            <div class="cs" imgUrl="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3289958443,3413081259&fm=26&gp=0.jpg">
+                图片1111111
+            </div>
+            <br>
+            <br>
+            <div class="cs" imgUrl="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=199216939,3003646253&fm=26&gp=0.jpg">
+                图片2222222
+            </div>
+            <br>
+            <br>
+            <div class="cs" imgUrl="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1554429571&di=56d7a8515ab06db5153eeadc2b36a8f9&imgtype=jpg&er=1&src=http%3A%2F%2Fimg1.ph.126.net%2Fh589RYWuGAYwLkYKf8IRdw%3D%3D%2F3265954154774685544.jpg">
+                图片3333333
+            </div>
+            <br>
+            <br>
+            <div class="cs" imgUrl="https://www.runoob.com/images/logo.png">
+                图片4444444
+            </div>
+         
+        <!--使用介绍-->
+        <a id="use"></a>
+        <div class="content">
+            <button type="button" class="btn btn-default" style="color: rgb(212, 106, 64);">
+                <span class="glyphicon glyphicon-hand-right"></span> 使用介绍
+            </button>
+            <ol>
+                <li>js中调用</li>
+					<pre class="brush:js;">
+
+
+					</pre>
+                <li>全部代码</li>
+					<pre class="brush:js;">
+
+                        //普通展示模式 , 点击哪一张展示哪一张
+                        &lt;div class="imgs" imgUrl="http://p1.meituan.net/tdchotel/bef1e188c25157e7e1617458e5c22ccc133239.jpg">
+                            图片1
+                        &lt;/div>
+                        &lt;br>
+                        &lt;br>
+                        &lt;div class="imgs" imgUrl="http://p1.meituan.net/tdchotel/a76239c4012f98733d7a78b2a7710bbb100636.jpg">
+                            图片2
+                        &lt;/div>
+                        &lt;br>
+                        &lt;br>
+                        &lt;div class="imgs" imgUrl="http://pavo.elongstatic.com/i/API350_350/067d6615d78d22912a21f502028b4ae0.jpg">
+                            图片3
+                        &lt;/div>
+                        &lt;script>
+                              $('.imgs').showPic({
+                                    imgBindBom:'imgUrl' // 默认值为imgUrl  与点击的class类中的传图片url的属性名称对应
+                                });
+                        &lt;/script>
+
+
+                        //复合展示模式： 获取当前点击dom的相同dom上的所有自定义属性上的img地址
+                         &lt;div class="cs" imgUrl="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3289958443,3413081259&fm=26&gp=0.jpg">
+                             图片1111111
+                         &lt;/div>
+                        &lt;br>
+                        &lt;br>
+                        &lt;div class="cs" imgUrl="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=199216939,3003646253&fm=26&gp=0.jpg">
+                            图片2222222
+                        &lt;/div>
+                        <br>
+                        <br>
+                        &lt;div class="cs" imgUrl="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3034657565,1220995896&fm=26&gp=0.jpg">
+                            图片3333333
+                        &lt;/div>
+                        &lt;script>
+                            $('.cs').showPic({
+                                imgBindBom:'imgUrl', // 默认值也是imgUrl  与点击的class类中的传图片url的属性名称对应
+                                obtainBom: true,      //默认值为false  ， 获取点击的class类的dom集合，取得其上面的imgBindBom的url图片地址，如果无，或者不是图片，控件将会过滤掉
+                            });
+                        &lt;/script>
+					</pre>
+            </ol>
+        </div>
+        <!--参数配置-->
+        <a id="config"></a>
+        <div class="content">
+            <button type="button" class="btn btn-default" style="color: rgb(212, 106, 64);">
+                <span class="glyphicon glyphicon-hand-right"></span> 参数配置
+            </button>
+            <ol>
+                <li>imgBindBom</li>
+                <p>设置图片绑定的属性，默认值为imgUrl (String)<font color="red">请通过imgBindBom此属性来传递绑定图片地址的属性，或者是使用默认值：imgUrl来储存图片地址属性，否则无法识别，详见上面示例</font></p>
+                <br>
+                <li>obtainBom</li>
+                <p>是否使用：复合展示模式，默认值为false(Booleans),不使用复合模式。（复合模式需注意下面的：imgUrls属性！！！） <font color="red">建议：使用复合模式的时候，控件绑定的dom属性为class而不是id, 这样你可以绑定更多的图片，详见上示例</font></p>
+                <br>
+                <li>imgUrls</li>
+                <p>自定义传递图片地址的集合，默认值为： 空数组(Array)：传值的格式为：[{url:'123.jpg',id:11},{url:'456.png',id:22}] ，当此属性有自定义传值得时候，默认开启复合模式，并且优先级大于obtainBom模式，只有当此属性传值为空的时候，才能强制开启obtainBom复合模式</p>
+                <li>imgUrl</li>
+                <p>自定义传递单张图片，默认值为 ：空字符串（String）,当此属性没有自定义传值时，会默认取imgBindBom绑定的属性值上面的图片地址，此值可以为空</p>
+                <br>
+            </ol>
+        </div>
+    </div>
+</div>
+</body>
+
+<script>
+    $(document).ready(function(){
+        $('.imgs').showPic({
+            imgBindBom:'imgUrl', // 默认值也是imgUrl  与点击的class类中的传图片url的属性名称对应
+        });
+        $('.cs').showPic({
+            imgBindBom:'imgUrl', // 默认值也是imgUrl  与点击的class类中的传图片url的属性名称对应
+            obtainBom: true,      //默认值为false  ， 获取点击的class类的dom集合，取得其上面的imgBindBom的url图片地址，如果无，或者不是图片，控件将会过滤掉
+            del:true,
+            delF:function(data){
+debugger;
+            }
+        });
+    });
+</script>
+
+
